@@ -20,6 +20,7 @@ import java.util.function.Function;
 import util.tables.Map2K;
 import util.tables.MultiLevelHashMap2K;
 
+@Deprecated
 public class ParallelProcessor {
 
 	private ExecutorService executor;
@@ -34,11 +35,6 @@ public class ParallelProcessor {
 		super();
 		this.executor = executor;
 	}
-
-//	public ParallelProcessor() {
-//		super();
-//		this.executor = defaultExecutor();
-//	}
 
 	public ParallelProcessor(int threadPoolSize) {
 		super();
