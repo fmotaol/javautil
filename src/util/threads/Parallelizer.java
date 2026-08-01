@@ -228,14 +228,20 @@ public class Parallelizer {
 		ThreadUtil.waitFor(() -> running.isEmpty());
 	}
 
-	//private boolean shutdownExecutor = true;
+	private boolean finished = false;
 
 	public void shutdown() {
+		finished = true;
+		
 		running.clear();
 //		for (Runnable r : running) {
 //			r.shutdown();
 //		}
 		executor.shutdown();
+	}
+
+	public boolean finished() {
+		return finished;
 	}
 
 //	@Override
