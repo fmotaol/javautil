@@ -205,6 +205,7 @@ public class Parallelizer {
 	}
 
 	private ArrayList<Runnable> running = new ArrayList<>();
+	private boolean finished = false;
 
 	public List<Runnable> running() {
 		return Collections.unmodifiableList(running);
@@ -231,6 +232,7 @@ public class Parallelizer {
 	//private boolean shutdownExecutor = true;
 
 	public void shutdown() {
+		finished  = true;
 		running.clear();
 //		for (Runnable r : running) {
 //			r.shutdown();
@@ -238,12 +240,8 @@ public class Parallelizer {
 		executor.shutdown();
 	}
 
-//	@Override
-//	protected void finalize() throws Throwable {
-//		if (shutdownExecutor)
-//			executor.shutdown();
-//	}
-//
-//	
+	public boolean finished() {
+		return finished;
+	}
 
 }
