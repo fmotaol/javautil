@@ -88,9 +88,9 @@ public class Check {
 		return false;
 	}
 
-	public static <T extends Object> boolean isAny(T value, T... list) {
-		return isAnyOf(value, list);
-	}
+//	public static <T extends Object> boolean isAny(T value, T... list) {
+//		return isAnyOf(value, list);
+//	}
 
 	public static <T extends Comparable<T>> int compare(T a, T b) {
 		return a.compareTo(b);
@@ -127,10 +127,10 @@ public class Check {
 		return r;
 	}
 
-	@Deprecated
-	public static <T extends Comparable<T>> T greatest(Collection<T> set) {
-		return greatest(set);
-	}
+//	@Deprecated
+//	public static <T extends Comparable<T>> T greatest(Collection<T> set) {
+//		return greatest(set);
+//	}
 
 	public static <T extends Comparable<T>> T highest(T... values) {
 		T r = null;
